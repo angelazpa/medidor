@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TLAXICOM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" sizes="96x96" href="logo/favicon-96.png" />
+</head>
+<body>
+  <div class="particles-container" id="particles"></div>
+
+  <header>
+    <div class="header-content">
+      <div class="header-left">
+        <h1>TLAXICOM</h1>
+        <div class="subtitle">INTERNET A TU ALCANCE</div>
+      </div>
+    </div>
+    <img src="logo/favicon-96.png" alt="Logo TLAXICOM" class="logo" />
+  </header>
+
+  <main class="main-content">
+    <div class="speedometer-wrapper">
+      <div class="side-labels">
+        <div class="side-label">
+          <i class="fas fa-download card-icon download-icon"></i>
+          <h3>Descarga</h3>
+          <div class="card-value" id="dlSpeed">—</div>
+          <div class="card-unit">Mbps</div>
+        </div>
+        <div class="side-label">
+          <i class="fas fa-upload card-icon upload-icon"></i>
+          <h3>Subida</h3>
+          <div class="card-value" id="ulSpeed">—</div>
+          <div class="card-unit">Mbps</div>
+        </div>
+      </div>
+
+      <div class="speedometer-container">
+        <div class="speedometer">
+          <div class="gauge" style="--progress: 0">
+            <div class="gauge-mask"></div>
+            <div class="gauge-inner">
+              <div class="needle" id="needle"></div>
+              <div class="needle-center"></div>
+              <div class="value-display">
+                <div id="avgSpeed">—</div>
+                <div class="unit">Mbps</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-labels">
+        <div class="side-label">
+          <i class="fas fa-bolt card-icon ping-icon"></i>
+          <h3>Ping</h3>
+          <div class="card-value" id="pingText">—</div>
+          <div class="card-unit">ms</div>
+        </div>
+        <div class="side-label">
+          <i class="fas fa-wave-square card-icon jitter-icon"></i>
+          <h3>Jitter</h3>
+          <div class="card-value" id="jitterText">—</div>
+          <div class="card-unit">ms</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-container" id="timelineContainer" style="display: none;">
+      <div class="timeline-header">
+        <div class="timeline-title">
+          <i class="fas fa-hourglass-half"></i>
+          <span>Progreso del Test</span>
+        </div>
+        <div class="timeline-countdown" id="timeRemaining">15s</div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-progress" id="timelineProgress"></div>
+        <div class="timeline-pulse" id="timelinePulse"></div>
+      </div>
+      <div class="timeline-connector">
+        <div class="timeline-connector-progress" id="timelineConnectorProgress"></div>
+      </div>
+      <div class="timeline-steps">
+        <div class="timeline-step" id="step1"><span class="timeline-step-label">Preparando</span></div>
+        <div class="timeline-step" id="step2"><span class="timeline-step-label">Ping</span></div>
+        <div class="timeline-step" id="step3"><span class="timeline-step-label">Descarga</span></div>
+        <div class="timeline-step" id="step4"><span class="timeline-step-label">Subida</span></div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button id="startBtn">
+        <i class="fas fa-tachometer-alt"></i> INICIAR PRUEBA
+      </button>
+    </div>
+
+    <div class="test-status" id="detailedStatus">Listo para iniciar la prueba</div>
+  </main>
+
+  <footer style="margin-top: 20px; text-align: center; font-size: 0.8rem; opacity: 0.8;">
+    © 2025 TLAXICOM Internet
+  </footer>
+
+  <div id="notification" class="notification"></div>
+
+  <script src="speedtest_worker.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
