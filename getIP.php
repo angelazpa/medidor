@@ -1,9 +1,8 @@
 <?php
 
 /*
- * This script detects the client's IP address and fetches ISP info from ipinfo.io/
- * Output from this script is a JSON string composed of 2 objects: a string called processedString which contains the combined IP, ISP, Country and distance as it can be presented to the user; and an object called rawIspInfo which contains the raw data from ipinfo.io (or an empty string if isp detection is disabled or if it failed).
- * Client side, the output of this script can be treated as JSON or as regular text. If the output is regular text, it will be shown to the user as is.
+este archvio localiza la IP del cliente y, si se solicita, obtiene información del ISP utilizando la API de ipinfo.io o una base de datos local.
+
  */
 
 error_reporting(0);
