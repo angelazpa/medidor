@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     s.setParameter("time_ul", 10);
     s.setParameter("time_dl", 10);
     s.setParameter("count_ping", 5);
-    s.setParameter("url_dl", "garbage.php");
-    s.setParameter("url_ul", "empty.php");
-    s.setParameter("url_ping", "empty.php");
+    // s.setParameter("url_dl", "garbage.php");
+    // s.setParameter("url_ul", "empty.php");
+    //s.setParameter("url_ping", "empty.php");
     s.setParameter("url_getIp", "getIP.php");
     s.setParameter("telemetry_level", 0); // Desactivar telemetría para pruebas
 
